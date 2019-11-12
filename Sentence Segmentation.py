@@ -22,7 +22,7 @@ from keras.layers import LSTM, Embedding, Dense, TimeDistributed, Dropout, Bidir
 import numpy as np
 
 
-data = pd.read_csv("sentences_eng.csv")
+data = pd.read_csv("home/ubuntu/sentences_eng.csv")
 
 data.columns = ['unknown','Sno','Language','Text']
 data = data[data['Language']=='eng']
@@ -132,4 +132,4 @@ history = model.fit(np.array(X_tr), y_tr, validation_data=(np.array(X_val), y_va
                     batch_size=batch_size, epochs=2, verbose=1)
 
 model_json = model.to_json()
-model.save_weights("sentencesegmentation.h5")
+model.save_weights("home/ubuntu/sentencesegmentation.h5")
